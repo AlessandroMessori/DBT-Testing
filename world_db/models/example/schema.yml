@@ -1,0 +1,21 @@
+
+version: 2
+
+models:
+  - name: city_country_denormalized
+    description: "Materialied Table precomputing the city country join "
+    columns:
+      - name: id
+        description: "The primary key and indentifier for the city"
+        tests:
+          - unique
+          - not_null
+
+  - name: big_city_count_by_continent
+    description: "Counts for each continent, the number of cities with at least 1 milion people"
+    columns:
+      - name: continent
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
